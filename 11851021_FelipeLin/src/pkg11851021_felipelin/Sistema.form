@@ -825,6 +825,9 @@
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Crear"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bt_ropaMouseClicked"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel3">
                           <Properties>
@@ -891,7 +894,7 @@
                                                           <Component id="jLabel112" min="-2" pref="55" max="-2" attributes="0"/>
                                                       </Group>
                                                       <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="tf_zapato_tipo" min="-2" pref="160" max="-2" attributes="0"/>
+                                                          <Component id="tf_zapato_suela" min="-2" pref="160" max="-2" attributes="0"/>
                                                           <EmptySpace pref="130" max="32767" attributes="0"/>
                                                           <Component id="jLabel111" min="-2" max="-2" attributes="0"/>
                                                       </Group>
@@ -969,7 +972,7 @@
                                           <EmptySpace max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="3" attributes="0">
                                               <Component id="jLabel110" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                                              <Component id="tf_zapato_tipo" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                                              <Component id="tf_zapato_suela" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -1009,10 +1012,10 @@
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel110">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="Tipo"/>
+                            <Property name="text" type="java.lang.String" value="Suela"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="tf_zapato_tipo">
+                        <Component class="javax.swing.JTextField" name="tf_zapato_suela">
                         </Component>
                         <Component class="javax.swing.JTextField" name="tf_zapato_como">
                         </Component>
@@ -1046,6 +1049,9 @@
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Crear"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bt_zapatoMouseClicked"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JComboBox" name="cb_persona1">
                           <Properties>
@@ -1278,6 +1284,9 @@
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Crear"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bt_hogarMouseClicked"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JComboBox" name="cb_persona2">
                           <Properties>

@@ -114,7 +114,7 @@ public class Sistema extends javax.swing.JFrame {
         jLabel109 = new javax.swing.JLabel();
         tf_zapato_calidad = new javax.swing.JTextField();
         jLabel110 = new javax.swing.JLabel();
-        tf_zapato_tipo = new javax.swing.JTextField();
+        tf_zapato_suela = new javax.swing.JTextField();
         tf_zapato_como = new javax.swing.JTextField();
         jLabel111 = new javax.swing.JLabel();
         jLabel112 = new javax.swing.JLabel();
@@ -472,6 +472,11 @@ public class Sistema extends javax.swing.JFrame {
         jLabel106.setText("Descripcion");
 
         bt_ropa.setText("Crear");
+        bt_ropa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_ropaMouseClicked(evt);
+            }
+        });
 
         jLabel3.setText("Persona");
 
@@ -584,7 +589,7 @@ public class Sistema extends javax.swing.JFrame {
 
         jLabel109.setText("Calidad");
 
-        jLabel110.setText("Tipo");
+        jLabel110.setText("Suela");
 
         jLabel111.setText("Comodidad");
 
@@ -595,6 +600,11 @@ public class Sistema extends javax.swing.JFrame {
         jLabel114.setText("Descripcion");
 
         bt_zapato.setText("Crear");
+        bt_zapato.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_zapatoMouseClicked(evt);
+            }
+        });
 
         jLabel4.setText("Persona");
 
@@ -633,7 +643,7 @@ public class Sistema extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jLabel112, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(panel_zapatoLayout.createSequentialGroup()
-                                        .addComponent(tf_zapato_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(tf_zapato_suela, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
                                         .addComponent(jLabel111)))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -690,7 +700,7 @@ public class Sistema extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(panel_zapatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel110, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tf_zapato_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(tf_zapato_suela, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(35, 35, 35)
                 .addGroup(panel_zapatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -719,6 +729,11 @@ public class Sistema extends javax.swing.JFrame {
         jLabel122.setText("Descripcion");
 
         bt_hogar.setText("Crear");
+        bt_hogar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_hogarMouseClicked(evt);
+            }
+        });
 
         jLabel5.setText("Persona");
 
@@ -918,123 +933,272 @@ public class Sistema extends javax.swing.JFrame {
         // TODO add your handling code here:
         String id, nombre, edad, sexo, estadoc, user, pass, cargo;
         double altura, peso;
+        String pass2 = JOptionPane.showInputDialog(this, "Ingrese la contraseña del sistema");
 
-        try {
-            id = tf_gerente_id.getText();
-            nombre = tf_gerente_nombre.getText();
-            edad = tf_gerente_edad.getText();
-            sexo = tf_gerente_sexo.getText();
-            estadoc = tf_gerente_estado.getText();
-            user = tf_gerente_usuario.getText();
-            pass = tf_gerente_pass.getText();
-            cargo = tf_gerente_cargo.getText();
-            altura = Integer.parseInt(tf_gerente_altura.getText());
-            peso = Integer.parseInt(tf_gerente_peso.getText());
+        if (pass2.equals(password)) {
 
-            Gerente x = new Gerente(user, pass, cargo, id, nombre, edad, sexo, estadoc, altura, peso);
+            try {
+                id = tf_gerente_id.getText();
+                nombre = tf_gerente_nombre.getText();
+                edad = tf_gerente_edad.getText();
+                sexo = tf_gerente_sexo.getText();
+                estadoc = tf_gerente_estado.getText();
+                user = tf_gerente_usuario.getText();
+                pass = tf_gerente_pass.getText();
+                cargo = tf_gerente_cargo.getText();
+                altura = Integer.parseInt(tf_gerente_altura.getText());
+                peso = Integer.parseInt(tf_gerente_peso.getText());
 
-            lista.add(x);
+                Gerente x = new Gerente(user, pass, cargo, id, nombre, edad, sexo, estadoc, altura, peso);
 
-            DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_contactos.getModel();
-            dc.addElement(x);
-            cb_contactos.setModel(dc);
+                lista.add(x);
 
-            DefaultComboBoxModel dc2 = (DefaultComboBoxModel) cb_persona.getModel();
-            dc.addElement(x);
-            cb_contactos.setModel(dc2);
+                DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_contactos.getModel();
+                dc.addElement(x);
+                cb_contactos.setModel(dc);
 
-            DefaultComboBoxModel dc3 = (DefaultComboBoxModel) cb_persona1.getModel();
-            dc.addElement(x);
-            cb_contactos.setModel(dc3);
+                DefaultComboBoxModel dc2 = (DefaultComboBoxModel) cb_persona.getModel();
+                dc.addElement(x);
+                cb_contactos.setModel(dc2);
 
-            DefaultComboBoxModel dc4 = (DefaultComboBoxModel) cb_persona2.getModel();
-            dc.addElement(x);
-            cb_contactos.setModel(dc4);
+                DefaultComboBoxModel dc3 = (DefaultComboBoxModel) cb_persona1.getModel();
+                dc.addElement(x);
+                cb_contactos.setModel(dc3);
 
-            tf_gerente_id.setText("");
-            tf_gerente_nombre.setText("");
-            tf_gerente_edad.setText("");
-            tf_gerente_sexo.setText("");
-            tf_gerente_estado.setText("");
-            tf_gerente_usuario.setText("");
-            tf_gerente_pass.setText("");
-            tf_gerente_cargo.setText("");
-            tf_gerente_altura.setText("");
-            tf_gerente_peso.setText("");
+                DefaultComboBoxModel dc4 = (DefaultComboBoxModel) cb_persona2.getModel();
+                dc.addElement(x);
+                cb_contactos.setModel(dc4);
 
-            JOptionPane.showMessageDialog(this, "Agregado con exito");
-            Menu_crear.setEnabledAt(2, true);
-            Menu_crear.setEnabledAt(3, true);
-            Menu_crear.setEnabledAt(4, true);
+                tf_gerente_id.setText("");
+                tf_gerente_nombre.setText("");
+                tf_gerente_edad.setText("");
+                tf_gerente_sexo.setText("");
+                tf_gerente_estado.setText("");
+                tf_gerente_usuario.setText("");
+                tf_gerente_pass.setText("");
+                tf_gerente_cargo.setText("");
+                tf_gerente_altura.setText("");
+                tf_gerente_peso.setText("");
 
-        } catch (Exception e) {
-            JOptionPane.showConfirmDialog(this, "Ocurrio un error y no se guardaron los datos");
+                JOptionPane.showMessageDialog(this, "Agregado con exito");
+                Menu_crear.setEnabledAt(2, true);
+                Menu_crear.setEnabledAt(3, true);
+                Menu_crear.setEnabledAt(4, true);
+
+            } catch (Exception e) {
+                JOptionPane.showConfirmDialog(this, "Ocurrio un error y no se guardaron los datos");
+
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "La contraseña esta incorrecta");
 
         }
+
     }//GEN-LAST:event_bt_gerenteMouseClicked
 
     private void bt_generalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_generalMouseClicked
         // TODO add your handling code here:
         String id, nombre, edad, sexo, estadoc, horario, ocupacion, trabajando;
         double altura, peso, sueldo;
+        String pass = JOptionPane.showInputDialog(this, "Ingrese la contraseña del sistema");
 
-        try {
-            id = tf_general_id.getText();
-            nombre = tf_general_nombre.getText();
-            edad = tf_general_edad.getText();
-            sexo = tf_general_sexo.getText();
-            estadoc = tf_general_estado.getText();
-            ocupacion = tf_general_ocup.getText();
-            trabajando = tf_general_tiempo.getText();
-            horario = tf_general_horario.getText();
-            altura = Integer.parseInt(tf_general_altura.getText());
-            peso = Integer.parseInt(tf_general_peso.getText());
-            sueldo = Integer.parseInt(tf_general_sueldo.getText());
+        if (pass.equals(password)) {
 
-            Persona_General x = new Persona_General(ocupacion, horario, trabajando, sueldo, id, nombre, edad, sexo, estadoc, altura, peso);
+            try {
+                id = tf_general_id.getText();
+                nombre = tf_general_nombre.getText();
+                edad = tf_general_edad.getText();
+                sexo = tf_general_sexo.getText();
+                estadoc = tf_general_estado.getText();
+                ocupacion = tf_general_ocup.getText();
+                trabajando = tf_general_tiempo.getText();
+                horario = tf_general_horario.getText();
+                altura = Integer.parseInt(tf_general_altura.getText());
+                peso = Integer.parseInt(tf_general_peso.getText());
+                sueldo = Integer.parseInt(tf_general_sueldo.getText());
 
-            lista.add(x);
+                Persona_General x = new Persona_General(ocupacion, horario, trabajando, sueldo, id, nombre, edad, sexo, estadoc, altura, peso);
 
-            DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_contactos.getModel();
-            dc.addElement(x);
-            cb_contactos.setModel(dc);
+                lista.add(x);
 
-            DefaultComboBoxModel dc2 = (DefaultComboBoxModel) cb_persona.getModel();
-            dc.addElement(x);
-            cb_contactos.setModel(dc2);
+                DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_contactos.getModel();
+                dc.addElement(x);
+                cb_contactos.setModel(dc);
 
-            DefaultComboBoxModel dc3 = (DefaultComboBoxModel) cb_persona1.getModel();
-            dc.addElement(x);
-            cb_contactos.setModel(dc3);
+                DefaultComboBoxModel dc2 = (DefaultComboBoxModel) cb_persona.getModel();
+                dc.addElement(x);
+                cb_contactos.setModel(dc2);
 
-            DefaultComboBoxModel dc4 = (DefaultComboBoxModel) cb_persona2.getModel();
-            dc.addElement(x);
-            cb_contactos.setModel(dc4);
+                DefaultComboBoxModel dc3 = (DefaultComboBoxModel) cb_persona1.getModel();
+                dc.addElement(x);
+                cb_contactos.setModel(dc3);
 
-            tf_general_id.setText("");
-            tf_general_nombre.setText("");
-            tf_general_edad.setText("");
-            tf_general_sexo.setText("");
-            tf_general_estado.setText("");
-            tf_general_ocup.setText("");
-            tf_general_tiempo.setText("");
-            tf_general_horario.setText("");
-            tf_general_altura.setText("");
-            tf_general_peso.setText("");
-            tf_general_sueldo.setText("");
-            
-            Menu_crear.setEnabledAt(2, true);
-            Menu_crear.setEnabledAt(3, true);
-            Menu_crear.setEnabledAt(4, true);
+                DefaultComboBoxModel dc4 = (DefaultComboBoxModel) cb_persona2.getModel();
+                dc.addElement(x);
+                cb_contactos.setModel(dc4);
 
-            JOptionPane.showMessageDialog(this, "Agregado con exito");
+                tf_general_id.setText("");
+                tf_general_nombre.setText("");
+                tf_general_edad.setText("");
+                tf_general_sexo.setText("");
+                tf_general_estado.setText("");
+                tf_general_ocup.setText("");
+                tf_general_tiempo.setText("");
+                tf_general_horario.setText("");
+                tf_general_altura.setText("");
+                tf_general_peso.setText("");
+                tf_general_sueldo.setText("");
 
-        } catch (Exception e) {
-            JOptionPane.showConfirmDialog(this, "Ocurrio un error y no se guardaron los datos");
+                Menu_crear.setEnabledAt(2, true);
+                Menu_crear.setEnabledAt(3, true);
+                Menu_crear.setEnabledAt(4, true);
+
+                JOptionPane.showMessageDialog(this, "Agregado con exito");
+
+            } catch (Exception e) {
+                JOptionPane.showConfirmDialog(this, "Ocurrio un error y no se guardaron los datos");
+
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "La contraseña esta incorrecta");
 
         }
 
+
     }//GEN-LAST:event_bt_generalMouseClicked
+
+    private void bt_ropaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_ropaMouseClicked
+        // TODO add your handling code here:
+        String color, descripcion, marca, size, calidad;
+        String tipo, pais;
+        double talla;
+        String pass = JOptionPane.showInputDialog(this, "Ingrese la contraseña del sistema");
+        if (pass.equals(password)) {
+
+            try {
+                color = tf_ropa_color.getText();
+                descripcion = tf_ropa_descrip.getText();
+                marca = tf_ropa_marca.getText();
+                size = tf_ropa_tam.getText();
+                calidad = tf_ropa_cali.getText();
+                tipo = tf_ropa_tipo.getText();
+                pais = tf_ropa_pais.getText();
+                talla = Integer.parseInt(tf_ropa_talla.getText());
+
+                Ropa x = new Ropa(talla, tipo, pais, color, descripcion, marca, size, calidad, (Persona) cb_persona.getModel().getSelectedItem());
+
+                lista2.add(x);
+
+                tf_ropa_color.setText("");
+                tf_ropa_descrip.setText("");
+                tf_ropa_marca.setText("");
+                tf_ropa_tam.setText("");
+                tf_ropa_cali.setText("");
+                tf_ropa_tipo.setText("");
+                tf_ropa_pais.setText("");
+                tf_ropa_talla.setText("");
+
+                JOptionPane.showMessageDialog(this, "Agregado con exito");
+
+            } catch (Exception e) {
+                JOptionPane.showConfirmDialog(this, "Ocurrio un error y no se guardaron los datos");
+
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "La contraseña esta incorrecta");
+
+        }
+    }//GEN-LAST:event_bt_ropaMouseClicked
+
+    private void bt_zapatoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_zapatoMouseClicked
+        // TODO add your handling code here:
+        String color, descripcion, marca, size, calidad;
+        String suela;
+        double talla;
+        int comodidad;
+
+        String pass = JOptionPane.showInputDialog(this, "Ingrese la contraseña del sistema");
+
+        if (pass.equals(password)) {
+            try {
+                color = tf_zapato_color.getText();
+                descripcion = tf_zapato_descrip.getText();
+                marca = tf_zapato_marca.getText();
+                size = tf_zapato_tam.getText();
+                calidad = tf_zapato_calidad.getText();
+                suela = tf_zapato_suela.getText();
+                comodidad = Integer.parseInt(tf_zapato_como.getText());
+                talla = Integer.parseInt(tf_zapato_talla.getText());
+
+                Zapatos x = new Zapatos(talla, suela, comodidad, color, descripcion, marca, size, calidad, (Persona) cb_persona1.getModel().getSelectedItem());
+
+                lista2.add(x);
+
+                tf_ropa_color.setText("");
+                tf_ropa_descrip.setText("");
+                tf_ropa_marca.setText("");
+                tf_ropa_tam.setText("");
+                tf_ropa_cali.setText("");
+                tf_ropa_tipo.setText("");
+                tf_ropa_pais.setText("");
+                tf_ropa_talla.setText("");
+
+                JOptionPane.showMessageDialog(this, "Agregado con exito");
+
+            } catch (Exception e) {
+                JOptionPane.showConfirmDialog(this, "Ocurrio un error y no se guardaron los datos");
+
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "La contraseña esta incorrecta");
+
+        }
+
+
+    }//GEN-LAST:event_bt_zapatoMouseClicked
+
+    private void bt_hogarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_hogarMouseClicked
+        // TODO add your handling code here:
+        String color, descripcion, marca, size, calidad;
+        String garantia, funcionamiento, lugar;
+
+        String pass = JOptionPane.showInputDialog(this, "Ingrese la contraseña del sistema");
+
+        if (pass.equals(password)) {
+            try {
+                color = tf_hogar_color.getText();
+                descripcion = tf_hogar_descrip.getText();
+                marca = tf_hogar_marca.getText();
+                size = tf_hogar_tam.getText();
+                calidad = tf_hogar_cali.getText();
+                funcionamiento = tf_hogar_funcion.getText();
+                garantia = tf_hogar_garan.getText();
+                lugar = tf_hogar_lugar.getText();
+
+                ObjetosHogar x = new ObjetosHogar(lugar, funcionamiento, garantia, color, descripcion, marca, size, calidad, (Persona) cb_persona2.getModel().getSelectedItem());
+
+                lista2.add(x);
+
+                tf_ropa_color.setText("");
+                tf_ropa_descrip.setText("");
+                tf_ropa_marca.setText("");
+                tf_ropa_tam.setText("");
+                tf_ropa_cali.setText("");
+                tf_ropa_tipo.setText("");
+                tf_ropa_pais.setText("");
+                tf_ropa_talla.setText("");
+
+                JOptionPane.showMessageDialog(this, "Agregado con exito");
+
+            } catch (Exception e) {
+                JOptionPane.showConfirmDialog(this, "Ocurrio un error y no se guardaron los datos");
+
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "La contraseña esta incorrecta");
+
+        }
+    }//GEN-LAST:event_bt_hogarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1183,9 +1347,11 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JTextField tf_zapato_como;
     private javax.swing.JTextField tf_zapato_descrip;
     private javax.swing.JTextField tf_zapato_marca;
+    private javax.swing.JTextField tf_zapato_suela;
     private javax.swing.JTextField tf_zapato_talla;
     private javax.swing.JTextField tf_zapato_tam;
-    private javax.swing.JTextField tf_zapato_tipo;
     // End of variables declaration//GEN-END:variables
 ArrayList<Persona> lista = new ArrayList();
+    ArrayList<Objetos> lista2 = new ArrayList();
+    String password = "unitec1234";
 }
