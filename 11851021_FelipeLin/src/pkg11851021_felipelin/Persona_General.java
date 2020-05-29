@@ -61,7 +61,7 @@ public class Persona_General extends Persona {
 
     @Override
     public String toString() {
-        return "Persona_General{" + "ocupacion=" + ocupacion + ", horario=" + horario + ", trabajando=" + trabajando + ", sueldo=" + sueldo + '}';
+        return nombre;
     }
 
 }
