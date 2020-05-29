@@ -8,6 +8,7 @@ package pkg11851021_felipelin;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -149,6 +150,20 @@ public class Sistema extends javax.swing.JFrame {
         jPanel9 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         cb_contactos = new javax.swing.JComboBox<>();
+        jPanel1 = new javax.swing.JPanel();
+        cb_receptor = new javax.swing.JComboBox<>();
+        cb_emisor = new javax.swing.JComboBox<>();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        ta_mensaje = new javax.swing.JTextArea();
+        jLabel8 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        cb_mensaje = new javax.swing.JComboBox<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tabla_mensaje = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -855,7 +870,7 @@ public class Sistema extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(43, 43, 43)
                 .addComponent(Menu_crear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -878,7 +893,7 @@ public class Sistema extends javax.swing.JFrame {
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cb_contactos, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(555, Short.MAX_VALUE))
+                .addContainerGap(508, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -887,10 +902,139 @@ public class Sistema extends javax.swing.JFrame {
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cb_contactos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(504, Short.MAX_VALUE))
+                .addContainerGap(520, Short.MAX_VALUE))
         );
 
         principal.addTab("Contactos", jPanel9);
+
+        jLabel6.setText("Receptor");
+
+        jLabel7.setText("Emisor");
+
+        ta_mensaje.setEditable(false);
+        ta_mensaje.setColumns(20);
+        ta_mensaje.setRows(5);
+        jScrollPane1.setViewportView(ta_mensaje);
+
+        jLabel8.setText("Mensaje");
+
+        jButton1.setText("Enviar Mensaje");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(132, 132, 132)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
+                            .addComponent(cb_receptor, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(164, 164, 164)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(cb_emisor, 0, 153, Short.MAX_VALUE)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(208, 208, 208)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(294, 294, 294)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(245, 245, 245)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(180, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cb_receptor, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cb_emisor, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(65, 65, 65)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(75, Short.MAX_VALUE))
+        );
+
+        principal.addTab("Mensaje", jPanel1);
+
+        jLabel9.setText("Mensaje");
+
+        cb_mensaje.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cb_mensajeItemStateChanged(evt);
+            }
+        });
+
+        tabla_mensaje.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Receptor", "Emisor", "Mensaje"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Object.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, true, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(tabla_mensaje);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(57, 57, 57)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cb_mensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 731, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(23, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(cb_mensaje, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45))
+        );
+
+        principal.addTab("Tabla de Mensaje", jPanel2);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -899,18 +1043,19 @@ public class Sistema extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 900, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(principal)
-                .addGap(82, 82, 82))
+                .addContainerGap(18, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(principal, javax.swing.GroupLayout.PREFERRED_SIZE, 787, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(71, 71, 71))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(principal, javax.swing.GroupLayout.PREFERRED_SIZE, 589, Short.MAX_VALUE))
+                .addComponent(principal, javax.swing.GroupLayout.PREFERRED_SIZE, 605, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -921,9 +1066,7 @@ public class Sistema extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -958,16 +1101,24 @@ public class Sistema extends javax.swing.JFrame {
                 cb_contactos.setModel(dc);
 
                 DefaultComboBoxModel dc2 = (DefaultComboBoxModel) cb_persona.getModel();
-                dc.addElement(x);
-                cb_contactos.setModel(dc2);
+                dc2.addElement(x);
+                cb_persona.setModel(dc2);
 
                 DefaultComboBoxModel dc3 = (DefaultComboBoxModel) cb_persona1.getModel();
-                dc.addElement(x);
-                cb_contactos.setModel(dc3);
+                dc3.addElement(x);
+                cb_persona1.setModel(dc3);
 
                 DefaultComboBoxModel dc4 = (DefaultComboBoxModel) cb_persona2.getModel();
-                dc.addElement(x);
-                cb_contactos.setModel(dc4);
+                dc4.addElement(x);
+                cb_persona2.setModel(dc4);
+
+                DefaultComboBoxModel dc5 = (DefaultComboBoxModel) cb_emisor.getModel();
+                dc5.addElement(x);
+                cb_emisor.setModel(dc5);
+
+                DefaultComboBoxModel dc6 = (DefaultComboBoxModel) cb_receptor.getModel();
+                dc6.addElement(x);
+                cb_receptor.setModel(dc6);
 
                 tf_gerente_id.setText("");
                 tf_gerente_nombre.setText("");
@@ -1026,16 +1177,24 @@ public class Sistema extends javax.swing.JFrame {
                 cb_contactos.setModel(dc);
 
                 DefaultComboBoxModel dc2 = (DefaultComboBoxModel) cb_persona.getModel();
-                dc.addElement(x);
-                cb_contactos.setModel(dc2);
+                dc2.addElement(x);
+                cb_persona.setModel(dc2);
 
                 DefaultComboBoxModel dc3 = (DefaultComboBoxModel) cb_persona1.getModel();
-                dc.addElement(x);
-                cb_contactos.setModel(dc3);
+                dc3.addElement(x);
+                cb_persona1.setModel(dc3);
 
                 DefaultComboBoxModel dc4 = (DefaultComboBoxModel) cb_persona2.getModel();
-                dc.addElement(x);
-                cb_contactos.setModel(dc4);
+                dc4.addElement(x);
+                cb_persona2.setModel(dc4);
+
+                DefaultComboBoxModel dc5 = (DefaultComboBoxModel) cb_emisor.getModel();
+                dc5.addElement(x);
+                cb_emisor.setModel(dc5);
+
+                DefaultComboBoxModel dc6 = (DefaultComboBoxModel) cb_receptor.getModel();
+                dc6.addElement(x);
+                cb_receptor.setModel(dc6);
 
                 tf_general_id.setText("");
                 tf_general_nombre.setText("");
@@ -1200,6 +1359,46 @@ public class Sistema extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_bt_hogarMouseClicked
 
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+        String mensaje;
+
+        String pass = JOptionPane.showInputDialog(this, "Ingrese la contraseña del sistema");
+
+        if (pass.equals(password)) {
+
+            try {
+                mensaje = ta_mensaje.getText();
+                Mensajes x = new Mensajes((Persona) cb_receptor.getModel().getSelectedItem(), (Persona) cb_emisor.getModel().getSelectedItem(), mensaje);
+
+                DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_mensaje.getModel();
+                dc.addElement(x);
+                cb_mensaje.setModel(dc);
+
+            } catch (Exception e) {
+                JOptionPane.showConfirmDialog(this, "Ocurrio un error y no se guardaron los datos");
+
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(this, "La contraseña esta incorrecta");
+
+        }
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void cb_mensajeItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_mensajeItemStateChanged
+        // TODO add your handling code here:
+
+        if (evt.getStateChange() == 2) {
+            Mensajes s = (Mensajes) cb_mensaje.getSelectedItem();
+            Object[] newrow = {s.getReceptor(), s.getEmisor(), s.getMensaje()};
+            DefaultTableModel modelo = (DefaultTableModel) tabla_mensaje.getModel();
+            modelo.addRow(newrow);
+            tabla_mensaje.setModel(modelo);
+
+        }
+    }//GEN-LAST:event_cb_mensajeItemStateChanged
+
     /**
      * @param args the command line arguments
      */
@@ -1243,9 +1442,13 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JButton bt_ropa;
     private javax.swing.JButton bt_zapato;
     private javax.swing.JComboBox<String> cb_contactos;
+    private javax.swing.JComboBox<String> cb_emisor;
+    private javax.swing.JComboBox<String> cb_mensaje;
     private javax.swing.JComboBox<String> cb_persona;
     private javax.swing.JComboBox<String> cb_persona1;
     private javax.swing.JComboBox<String> cb_persona2;
+    private javax.swing.JComboBox<String> cb_receptor;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel100;
     private javax.swing.JLabel jLabel101;
@@ -1274,8 +1477,11 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel78;
     private javax.swing.JLabel jLabel79;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel80;
     private javax.swing.JLabel jLabel81;
     private javax.swing.JLabel jLabel82;
@@ -1286,6 +1492,7 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel87;
     private javax.swing.JLabel jLabel88;
     private javax.swing.JLabel jLabel89;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel90;
     private javax.swing.JLabel jLabel91;
     private javax.swing.JLabel jLabel92;
@@ -1296,15 +1503,21 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel97;
     private javax.swing.JLabel jLabel98;
     private javax.swing.JLabel jLabel99;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPanel panel_general;
     private javax.swing.JPanel panel_gerente;
     private javax.swing.JPanel panel_hogar;
     private javax.swing.JPanel panel_ropa;
     private javax.swing.JPanel panel_zapato;
     private javax.swing.JTabbedPane principal;
+    private javax.swing.JTextArea ta_mensaje;
+    private javax.swing.JTable tabla_mensaje;
     private javax.swing.JTextField tf_general_altura;
     private javax.swing.JTextField tf_general_edad;
     private javax.swing.JTextField tf_general_estado;
@@ -1351,7 +1564,8 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JTextField tf_zapato_talla;
     private javax.swing.JTextField tf_zapato_tam;
     // End of variables declaration//GEN-END:variables
-ArrayList<Persona> lista = new ArrayList();
+    ArrayList<Persona> lista = new ArrayList();
     ArrayList<Objetos> lista2 = new ArrayList();
     String password = "unitec1234";
+    ArrayList<Mensajes> lista3 = new ArrayList();
 }
