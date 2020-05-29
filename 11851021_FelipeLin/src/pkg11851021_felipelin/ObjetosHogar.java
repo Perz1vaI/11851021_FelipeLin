@@ -51,7 +51,7 @@ public class ObjetosHogar extends Objetos {
 
     @Override
     public String toString() {
-        return "ObjetosHogar{" + "lugar=" + lugar + ", funcionamiento=" + funcionamiento + ", garantia=" + garantia + '}';
+        return "Objeto de hogar " + super.getMarca() + " " + funcionamiento;
     }
 
 }

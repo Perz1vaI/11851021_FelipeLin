@@ -51,7 +51,7 @@ public class Zapatos extends Objetos {
 
     @Override
     public String toString() {
-        return "Zapatos{" + "talla=" + talla + ", suela=" + suela + ", comodidad=" + comodidad + '}';
+        return "Zapatos " + super.getMarca() + " " + talla;
     }
 
 }

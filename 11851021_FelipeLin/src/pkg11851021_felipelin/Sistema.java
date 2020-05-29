@@ -20,7 +20,7 @@ public class Sistema extends javax.swing.JFrame {
      * Creates new form Sistema
      */
     public Sistema() {
-
+        
         initComponents();
         Menu_crear.setEnabledAt(2, false);
         Menu_crear.setEnabledAt(3, false);
@@ -151,7 +151,8 @@ public class Sistema extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         cb_contactos = new javax.swing.JComboBox<>();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabla_contacto = new javax.swing.JTable();
+        jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         cb_receptor = new javax.swing.JComboBox<>();
         cb_emisor = new javax.swing.JComboBox<>();
@@ -166,15 +167,26 @@ public class Sistema extends javax.swing.JFrame {
         cb_mensaje = new javax.swing.JComboBox<>();
         jScrollPane2 = new javax.swing.JScrollPane();
         tabla_mensaje = new javax.swing.JTable();
+        jPanel3 = new javax.swing.JPanel();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel5.setBackground(new java.awt.Color(204, 204, 255));
         jPanel5.setForeground(new java.awt.Color(204, 204, 255));
 
-        jLabel1.setFont(new java.awt.Font("Courier", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Courier", 3, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Bienvenido al sistema de gestions de recursos humanos y insumos");
+
+        jPanel4.setBackground(new java.awt.Color(255, 204, 102));
+        jPanel4.setForeground(new java.awt.Color(255, 255, 255));
+
+        panel_gerente.setBackground(new java.awt.Color(0, 102, 51));
 
         jLabel78.setText("ID");
 
@@ -196,6 +208,7 @@ public class Sistema extends javax.swing.JFrame {
 
         jLabel87.setText("Usuario");
 
+        bt_gerente.setBackground(new java.awt.Color(153, 0, 0));
         bt_gerente.setText("Crear");
         bt_gerente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -311,7 +324,9 @@ public class Sistema extends javax.swing.JFrame {
                 .addGap(83, 83, 83))
         );
 
-        Menu_crear.addTab("Men", panel_gerente);
+        Menu_crear.addTab("Crear Gerente", panel_gerente);
+
+        panel_general.setBackground(new java.awt.Color(0, 102, 51));
 
         jLabel88.setText("Nombre");
 
@@ -327,6 +342,7 @@ public class Sistema extends javax.swing.JFrame {
 
         jLabel94.setText("Altura");
 
+        bt_general.setBackground(new java.awt.Color(153, 0, 0));
         bt_general.setText("Crear");
         bt_general.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -472,6 +488,8 @@ public class Sistema extends javax.swing.JFrame {
 
         Menu_crear.addTab("Crear Persona General", panel_general);
 
+        panel_ropa.setBackground(new java.awt.Color(0, 102, 51));
+
         jLabel99.setText("Color");
 
         jLabel100.setText("Marca");
@@ -488,6 +506,7 @@ public class Sistema extends javax.swing.JFrame {
 
         jLabel106.setText("Descripcion");
 
+        bt_ropa.setBackground(new java.awt.Color(153, 0, 0));
         bt_ropa.setText("Crear");
         bt_ropa.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -600,6 +619,8 @@ public class Sistema extends javax.swing.JFrame {
 
         Menu_crear.addTab("Crear Ropa", panel_ropa);
 
+        panel_zapato.setBackground(new java.awt.Color(0, 102, 51));
+
         jLabel107.setText("Color");
 
         jLabel108.setText("Marca");
@@ -616,6 +637,7 @@ public class Sistema extends javax.swing.JFrame {
 
         jLabel114.setText("Descripcion");
 
+        bt_zapato.setBackground(new java.awt.Color(153, 0, 0));
         bt_zapato.setText("Crear");
         bt_zapato.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -729,6 +751,8 @@ public class Sistema extends javax.swing.JFrame {
 
         Menu_crear.addTab("Crear Zapato", panel_zapato);
 
+        panel_hogar.setBackground(new java.awt.Color(0, 102, 51));
+
         jLabel115.setText("Color");
 
         jLabel116.setText("Marca");
@@ -745,6 +769,7 @@ public class Sistema extends javax.swing.JFrame {
 
         jLabel122.setText("Descripcion");
 
+        bt_hogar.setBackground(new java.awt.Color(153, 0, 0));
         bt_hogar.setText("Crear");
         bt_hogar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -884,6 +909,10 @@ public class Sistema extends javax.swing.JFrame {
 
         principal.addTab("Crear", jPanel4);
 
+        jPanel9.setBackground(new java.awt.Color(255, 153, 0));
+
+        jLabel2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Usuarios");
 
         cb_contactos.addItemListener(new java.awt.event.ItemListener() {
@@ -892,7 +921,7 @@ public class Sistema extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabla_contacto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -915,7 +944,16 @@ public class Sistema extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane3.setViewportView(jTable1);
+        jScrollPane3.setViewportView(tabla_contacto);
+
+        jButton2.setBackground(new java.awt.Color(204, 204, 0));
+        jButton2.setForeground(new java.awt.Color(0, 0, 0));
+        jButton2.setText("Eliminar");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -928,7 +966,10 @@ public class Sistema extends javax.swing.JFrame {
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cb_contactos, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(cb_contactos, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(283, 283, 283)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
@@ -939,23 +980,34 @@ public class Sistema extends javax.swing.JFrame {
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cb_contactos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36))
         );
 
         principal.addTab("Contactos", jPanel9);
 
+        jPanel1.setBackground(new java.awt.Color(102, 153, 255));
+
+        jLabel6.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Receptor");
 
+        jLabel7.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Emisor");
 
-        ta_mensaje.setEditable(false);
         ta_mensaje.setColumns(20);
         ta_mensaje.setRows(5);
         jScrollPane1.setViewportView(ta_mensaje);
 
+        jLabel8.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Mensaje");
 
+        jButton1.setBackground(new java.awt.Color(153, 0, 204));
         jButton1.setText("Enviar Mensaje");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -982,11 +1034,11 @@ public class Sistema extends javax.swing.JFrame {
                         .addGap(208, 208, 208)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(294, 294, 294)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(245, 245, 245)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(314, 314, 314)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(180, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -1011,6 +1063,10 @@ public class Sistema extends javax.swing.JFrame {
 
         principal.addTab("Mensaje", jPanel1);
 
+        jPanel2.setBackground(new java.awt.Color(102, 102, 255));
+
+        jLabel9.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Mensaje");
 
         cb_mensaje.addItemListener(new java.awt.event.ItemListener() {
@@ -1065,14 +1121,100 @@ public class Sistema extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(cb_mensaje, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(cb_mensaje)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(45, 45, 45))
         );
 
         principal.addTab("Tabla de Mensaje", jPanel2);
+
+        jPanel3.setBackground(new java.awt.Color(0, 102, 102));
+
+        jButton3.setBackground(new java.awt.Color(204, 255, 255));
+        jButton3.setForeground(new java.awt.Color(0, 0, 0));
+        jButton3.setText("Eliminar Persona");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
+
+        jButton4.setBackground(new java.awt.Color(204, 255, 255));
+        jButton4.setForeground(new java.awt.Color(0, 0, 0));
+        jButton4.setText("Eliminar Objeto");
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(98, 98, 98)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 183, Short.MAX_VALUE)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(117, 117, 117))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(117, 117, 117)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(371, Short.MAX_VALUE))
+        );
+
+        principal.addTab("Eliminar", jPanel3);
+
+        jPanel6.setBackground(new java.awt.Color(51, 0, 204));
+
+        jButton5.setBackground(new java.awt.Color(204, 255, 255));
+        jButton5.setForeground(new java.awt.Color(0, 0, 0));
+        jButton5.setText("Modficar Persona");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
+
+        jButton6.setBackground(new java.awt.Color(204, 255, 255));
+        jButton6.setForeground(new java.awt.Color(0, 0, 0));
+        jButton6.setText("Modificar Objeto");
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton6MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(95, 95, 95)
+                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 161, Short.MAX_VALUE)
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(142, 142, 142))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(89, 89, 89)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(399, Short.MAX_VALUE))
+        );
+
+        principal.addTab("Modificar", jPanel6);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -1081,7 +1223,7 @@ public class Sistema extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 900, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(principal, javax.swing.GroupLayout.PREFERRED_SIZE, 787, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1115,9 +1257,9 @@ public class Sistema extends javax.swing.JFrame {
         String id, nombre, edad, sexo, estadoc, user, pass, cargo;
         double altura, peso;
         String pass2 = JOptionPane.showInputDialog(this, "Ingrese la contraseña del sistema");
-
+        
         if (pass2.equals(password)) {
-
+            
             try {
                 id = tf_gerente_id.getText();
                 nombre = tf_gerente_nombre.getText();
@@ -1129,35 +1271,35 @@ public class Sistema extends javax.swing.JFrame {
                 cargo = tf_gerente_cargo.getText();
                 altura = Integer.parseInt(tf_gerente_altura.getText());
                 peso = Integer.parseInt(tf_gerente_peso.getText());
-
+                
                 Gerente x = new Gerente(user, pass, cargo, id, nombre, edad, sexo, estadoc, altura, peso);
-
+                
                 lista.add(x);
-
+                
                 DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_contactos.getModel();
                 dc.addElement(x);
                 cb_contactos.setModel(dc);
-
+                
                 DefaultComboBoxModel dc2 = (DefaultComboBoxModel) cb_persona.getModel();
                 dc2.addElement(x);
                 cb_persona.setModel(dc2);
-
+                
                 DefaultComboBoxModel dc3 = (DefaultComboBoxModel) cb_persona1.getModel();
                 dc3.addElement(x);
                 cb_persona1.setModel(dc3);
-
+                
                 DefaultComboBoxModel dc4 = (DefaultComboBoxModel) cb_persona2.getModel();
                 dc4.addElement(x);
                 cb_persona2.setModel(dc4);
-
+                
                 DefaultComboBoxModel dc5 = (DefaultComboBoxModel) cb_emisor.getModel();
                 dc5.addElement(x);
                 cb_emisor.setModel(dc5);
-
+                
                 DefaultComboBoxModel dc6 = (DefaultComboBoxModel) cb_receptor.getModel();
                 dc6.addElement(x);
                 cb_receptor.setModel(dc6);
-
+                
                 tf_gerente_id.setText("");
                 tf_gerente_nombre.setText("");
                 tf_gerente_edad.setText("");
@@ -1168,19 +1310,19 @@ public class Sistema extends javax.swing.JFrame {
                 tf_gerente_cargo.setText("");
                 tf_gerente_altura.setText("");
                 tf_gerente_peso.setText("");
-
+                
                 JOptionPane.showMessageDialog(this, "Agregado con exito");
                 Menu_crear.setEnabledAt(2, true);
                 Menu_crear.setEnabledAt(3, true);
                 Menu_crear.setEnabledAt(4, true);
-
+                
             } catch (Exception e) {
                 JOptionPane.showConfirmDialog(this, "Ocurrio un error y no se guardaron los datos");
-
+                
             }
         } else {
             JOptionPane.showMessageDialog(this, "La contraseña esta incorrecta");
-
+            
         }
 
     }//GEN-LAST:event_bt_gerenteMouseClicked
@@ -1190,9 +1332,9 @@ public class Sistema extends javax.swing.JFrame {
         String id, nombre, edad, sexo, estadoc, horario, ocupacion, trabajando;
         double altura, peso, sueldo;
         String pass = JOptionPane.showInputDialog(this, "Ingrese la contraseña del sistema");
-
+        
         if (pass.equals(password)) {
-
+            
             try {
                 id = tf_general_id.getText();
                 nombre = tf_general_nombre.getText();
@@ -1205,35 +1347,35 @@ public class Sistema extends javax.swing.JFrame {
                 altura = Integer.parseInt(tf_general_altura.getText());
                 peso = Integer.parseInt(tf_general_peso.getText());
                 sueldo = Integer.parseInt(tf_general_sueldo.getText());
-
+                
                 Persona_General x = new Persona_General(ocupacion, horario, trabajando, sueldo, id, nombre, edad, sexo, estadoc, altura, peso);
-
+                
                 lista.add(x);
-
+                
                 DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_contactos.getModel();
                 dc.addElement(x);
                 cb_contactos.setModel(dc);
-
+                
                 DefaultComboBoxModel dc2 = (DefaultComboBoxModel) cb_persona.getModel();
                 dc2.addElement(x);
                 cb_persona.setModel(dc2);
-
+                
                 DefaultComboBoxModel dc3 = (DefaultComboBoxModel) cb_persona1.getModel();
                 dc3.addElement(x);
                 cb_persona1.setModel(dc3);
-
+                
                 DefaultComboBoxModel dc4 = (DefaultComboBoxModel) cb_persona2.getModel();
                 dc4.addElement(x);
                 cb_persona2.setModel(dc4);
-
+                
                 DefaultComboBoxModel dc5 = (DefaultComboBoxModel) cb_emisor.getModel();
                 dc5.addElement(x);
                 cb_emisor.setModel(dc5);
-
+                
                 DefaultComboBoxModel dc6 = (DefaultComboBoxModel) cb_receptor.getModel();
                 dc6.addElement(x);
                 cb_receptor.setModel(dc6);
-
+                
                 tf_general_id.setText("");
                 tf_general_nombre.setText("");
                 tf_general_edad.setText("");
@@ -1245,22 +1387,22 @@ public class Sistema extends javax.swing.JFrame {
                 tf_general_altura.setText("");
                 tf_general_peso.setText("");
                 tf_general_sueldo.setText("");
-
+                
                 Menu_crear.setEnabledAt(2, true);
                 Menu_crear.setEnabledAt(3, true);
                 Menu_crear.setEnabledAt(4, true);
-
+                
                 JOptionPane.showMessageDialog(this, "Agregado con exito");
-
+                
             } catch (Exception e) {
                 JOptionPane.showConfirmDialog(this, "Ocurrio un error y no se guardaron los datos");
-
+                
             }
         } else {
             JOptionPane.showMessageDialog(this, "La contraseña esta incorrecta");
-
+            
         }
-
+        
 
     }//GEN-LAST:event_bt_generalMouseClicked
 
@@ -1271,7 +1413,7 @@ public class Sistema extends javax.swing.JFrame {
         double talla;
         String pass = JOptionPane.showInputDialog(this, "Ingrese la contraseña del sistema");
         if (pass.equals(password)) {
-
+            
             try {
                 color = tf_ropa_color.getText();
                 descripcion = tf_ropa_descrip.getText();
@@ -1281,11 +1423,11 @@ public class Sistema extends javax.swing.JFrame {
                 tipo = tf_ropa_tipo.getText();
                 pais = tf_ropa_pais.getText();
                 talla = Integer.parseInt(tf_ropa_talla.getText());
-
+                
                 Ropa x = new Ropa(talla, tipo, pais, color, descripcion, marca, size, calidad, (Persona) cb_persona.getModel().getSelectedItem());
-
+                
                 lista2.add(x);
-
+                
                 tf_ropa_color.setText("");
                 tf_ropa_descrip.setText("");
                 tf_ropa_marca.setText("");
@@ -1294,16 +1436,16 @@ public class Sistema extends javax.swing.JFrame {
                 tf_ropa_tipo.setText("");
                 tf_ropa_pais.setText("");
                 tf_ropa_talla.setText("");
-
+                
                 JOptionPane.showMessageDialog(this, "Agregado con exito");
-
+                
             } catch (Exception e) {
                 JOptionPane.showConfirmDialog(this, "Ocurrio un error y no se guardaron los datos");
-
+                
             }
         } else {
             JOptionPane.showMessageDialog(this, "La contraseña esta incorrecta");
-
+            
         }
     }//GEN-LAST:event_bt_ropaMouseClicked
 
@@ -1313,9 +1455,9 @@ public class Sistema extends javax.swing.JFrame {
         String suela;
         double talla;
         int comodidad;
-
+        
         String pass = JOptionPane.showInputDialog(this, "Ingrese la contraseña del sistema");
-
+        
         if (pass.equals(password)) {
             try {
                 color = tf_zapato_color.getText();
@@ -1326,11 +1468,11 @@ public class Sistema extends javax.swing.JFrame {
                 suela = tf_zapato_suela.getText();
                 comodidad = Integer.parseInt(tf_zapato_como.getText());
                 talla = Integer.parseInt(tf_zapato_talla.getText());
-
+                
                 Zapatos x = new Zapatos(talla, suela, comodidad, color, descripcion, marca, size, calidad, (Persona) cb_persona1.getModel().getSelectedItem());
-
+                
                 lista2.add(x);
-
+                
                 tf_ropa_color.setText("");
                 tf_ropa_descrip.setText("");
                 tf_ropa_marca.setText("");
@@ -1339,18 +1481,18 @@ public class Sistema extends javax.swing.JFrame {
                 tf_ropa_tipo.setText("");
                 tf_ropa_pais.setText("");
                 tf_ropa_talla.setText("");
-
+                
                 JOptionPane.showMessageDialog(this, "Agregado con exito");
-
+                
             } catch (Exception e) {
                 JOptionPane.showConfirmDialog(this, "Ocurrio un error y no se guardaron los datos");
-
+                
             }
         } else {
             JOptionPane.showMessageDialog(this, "La contraseña esta incorrecta");
-
+            
         }
-
+        
 
     }//GEN-LAST:event_bt_zapatoMouseClicked
 
@@ -1358,9 +1500,9 @@ public class Sistema extends javax.swing.JFrame {
         // TODO add your handling code here:
         String color, descripcion, marca, size, calidad;
         String garantia, funcionamiento, lugar;
-
+        
         String pass = JOptionPane.showInputDialog(this, "Ingrese la contraseña del sistema");
-
+        
         if (pass.equals(password)) {
             try {
                 color = tf_hogar_color.getText();
@@ -1371,11 +1513,11 @@ public class Sistema extends javax.swing.JFrame {
                 funcionamiento = tf_hogar_funcion.getText();
                 garantia = tf_hogar_garan.getText();
                 lugar = tf_hogar_lugar.getText();
-
+                
                 ObjetosHogar x = new ObjetosHogar(lugar, funcionamiento, garantia, color, descripcion, marca, size, calidad, (Persona) cb_persona2.getModel().getSelectedItem());
-
+                
                 lista2.add(x);
-
+                
                 tf_ropa_color.setText("");
                 tf_ropa_descrip.setText("");
                 tf_ropa_marca.setText("");
@@ -1384,43 +1526,45 @@ public class Sistema extends javax.swing.JFrame {
                 tf_ropa_tipo.setText("");
                 tf_ropa_pais.setText("");
                 tf_ropa_talla.setText("");
-
+                
                 JOptionPane.showMessageDialog(this, "Agregado con exito");
-
+                
             } catch (Exception e) {
                 JOptionPane.showConfirmDialog(this, "Ocurrio un error y no se guardaron los datos");
-
+                
             }
         } else {
             JOptionPane.showMessageDialog(this, "La contraseña esta incorrecta");
-
+            
         }
     }//GEN-LAST:event_bt_hogarMouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
         String mensaje;
-
+        
         String pass = JOptionPane.showInputDialog(this, "Ingrese la contraseña del sistema");
-
+        
         if (pass.equals(password)) {
-
+            
             try {
                 mensaje = ta_mensaje.getText();
                 Mensajes x = new Mensajes((Persona) cb_receptor.getModel().getSelectedItem(), (Persona) cb_emisor.getModel().getSelectedItem(), mensaje);
-
+                
                 DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_mensaje.getModel();
                 dc.addElement(x);
                 cb_mensaje.setModel(dc);
-
+                
+                JOptionPane.showMessageDialog(this, "Se mando el mensaje con exito");
+                
             } catch (Exception e) {
                 JOptionPane.showConfirmDialog(this, "Ocurrio un error y no se guardaron los datos");
-
+                
             }
-
+            
         } else {
             JOptionPane.showMessageDialog(this, "La contraseña esta incorrecta");
-
+            
         }
     }//GEN-LAST:event_jButton1MouseClicked
 
@@ -1433,7 +1577,7 @@ public class Sistema extends javax.swing.JFrame {
             DefaultTableModel modelo = (DefaultTableModel) tabla_mensaje.getModel();
             modelo.addRow(newrow);
             tabla_mensaje.setModel(modelo);
-
+            
         }
     }//GEN-LAST:event_cb_mensajeItemStateChanged
 
@@ -1444,16 +1588,65 @@ public class Sistema extends javax.swing.JFrame {
             Persona s = (Persona) cb_contactos.getSelectedItem();
             if (s instanceof Gerente) {
                 rol = "Gerente";
-            } else if (s instanceof Gerente) {
+            } else if (s instanceof Persona_General) {
                 rol = "Persona General";
             }
             Object[] newrow = {s.getNombre(), rol};
-            DefaultTableModel modelo = (DefaultTableModel) tabla_mensaje.getModel();
+            DefaultTableModel modelo = (DefaultTableModel) tabla_contacto.getModel();
             modelo.addRow(newrow);
-            tabla_mensaje.setModel(modelo);
-
+            tabla_contacto.setModel(modelo);
+            
         }
     }//GEN-LAST:event_cb_contactosItemStateChanged
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:
+        if (tabla_contacto.getSelectedRow() >= 0) {
+            DefaultTableModel modelo = (DefaultTableModel) tabla_contacto.getModel();
+            modelo.removeRow(tabla_contacto.getSelectedRow());
+            tabla_contacto.setModel(modelo);
+        }
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        // TODO add your handling code here:
+        String s = "";
+        for (Persona persona : lista) {
+            s += lista.indexOf(persona) + " ";
+            s += persona;
+            s += "\n";
+        }
+        int eliminar = Integer.parseInt(JOptionPane.showInputDialog(this, s + "\nIngrese la posicion:"));
+        if (eliminar < lista.size() || eliminar > lista.size()) {
+            JOptionPane.showMessageDialog(this, "Usted ingreso equivocado las poicion!");
+        }else{
+            lista.remove(eliminar);
+        }
+    }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        // TODO add your handling code here:
+        String s = "";
+        for (Objetos persona : lista2) {
+            s += "Posicion "+lista.indexOf(persona) + " ";
+            s += persona;
+            s += "\n";
+        }
+        int eliminar = Integer.parseInt(JOptionPane.showInputDialog(this, s + "\nIngrese la posicion:"));
+        if (eliminar < lista2.size() || eliminar > lista2.size()) {
+            JOptionPane.showMessageDialog(this, "Usted ingreso equivocado las poicion!");
+        }else{
+            lista2.remove(eliminar);
+        }
+    }//GEN-LAST:event_jButton4MouseClicked
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5MouseClicked
+
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1505,6 +1698,11 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_persona2;
     private javax.swing.JComboBox<String> cb_receptor;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel100;
     private javax.swing.JLabel jLabel101;
@@ -1561,13 +1759,14 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel99;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable1;
     private javax.swing.JPanel panel_general;
     private javax.swing.JPanel panel_gerente;
     private javax.swing.JPanel panel_hogar;
@@ -1575,6 +1774,7 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JPanel panel_zapato;
     private javax.swing.JTabbedPane principal;
     private javax.swing.JTextArea ta_mensaje;
+    private javax.swing.JTable tabla_contacto;
     private javax.swing.JTable tabla_mensaje;
     private javax.swing.JTextField tf_general_altura;
     private javax.swing.JTextField tf_general_edad;
