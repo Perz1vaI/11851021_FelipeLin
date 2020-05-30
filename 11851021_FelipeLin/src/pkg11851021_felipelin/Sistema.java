@@ -20,7 +20,7 @@ public class Sistema extends javax.swing.JFrame {
      * Creates new form Sistema
      */
     public Sistema() {
-        
+
         initComponents();
         Menu_crear.setEnabledAt(2, false);
         Menu_crear.setEnabledAt(3, false);
@@ -1257,9 +1257,9 @@ public class Sistema extends javax.swing.JFrame {
         String id, nombre, edad, sexo, estadoc, user, pass, cargo;
         double altura, peso;
         String pass2 = JOptionPane.showInputDialog(this, "Ingrese la contraseña del sistema");
-        
+
         if (pass2.equals(password)) {
-            
+
             try {
                 id = tf_gerente_id.getText();
                 nombre = tf_gerente_nombre.getText();
@@ -1271,35 +1271,35 @@ public class Sistema extends javax.swing.JFrame {
                 cargo = tf_gerente_cargo.getText();
                 altura = Integer.parseInt(tf_gerente_altura.getText());
                 peso = Integer.parseInt(tf_gerente_peso.getText());
-                
+
                 Gerente x = new Gerente(user, pass, cargo, id, nombre, edad, sexo, estadoc, altura, peso);
-                
+
                 lista.add(x);
-                
+
                 DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_contactos.getModel();
                 dc.addElement(x);
                 cb_contactos.setModel(dc);
-                
+
                 DefaultComboBoxModel dc2 = (DefaultComboBoxModel) cb_persona.getModel();
                 dc2.addElement(x);
                 cb_persona.setModel(dc2);
-                
+
                 DefaultComboBoxModel dc3 = (DefaultComboBoxModel) cb_persona1.getModel();
                 dc3.addElement(x);
                 cb_persona1.setModel(dc3);
-                
+
                 DefaultComboBoxModel dc4 = (DefaultComboBoxModel) cb_persona2.getModel();
                 dc4.addElement(x);
                 cb_persona2.setModel(dc4);
-                
+
                 DefaultComboBoxModel dc5 = (DefaultComboBoxModel) cb_emisor.getModel();
                 dc5.addElement(x);
                 cb_emisor.setModel(dc5);
-                
+
                 DefaultComboBoxModel dc6 = (DefaultComboBoxModel) cb_receptor.getModel();
                 dc6.addElement(x);
                 cb_receptor.setModel(dc6);
-                
+
                 tf_gerente_id.setText("");
                 tf_gerente_nombre.setText("");
                 tf_gerente_edad.setText("");
@@ -1310,19 +1310,19 @@ public class Sistema extends javax.swing.JFrame {
                 tf_gerente_cargo.setText("");
                 tf_gerente_altura.setText("");
                 tf_gerente_peso.setText("");
-                
+
                 JOptionPane.showMessageDialog(this, "Agregado con exito");
                 Menu_crear.setEnabledAt(2, true);
                 Menu_crear.setEnabledAt(3, true);
                 Menu_crear.setEnabledAt(4, true);
-                
+
             } catch (Exception e) {
                 JOptionPane.showConfirmDialog(this, "Ocurrio un error y no se guardaron los datos");
-                
+
             }
         } else {
             JOptionPane.showMessageDialog(this, "La contraseña esta incorrecta");
-            
+
         }
 
     }//GEN-LAST:event_bt_gerenteMouseClicked
@@ -1332,9 +1332,9 @@ public class Sistema extends javax.swing.JFrame {
         String id, nombre, edad, sexo, estadoc, horario, ocupacion, trabajando;
         double altura, peso, sueldo;
         String pass = JOptionPane.showInputDialog(this, "Ingrese la contraseña del sistema");
-        
+
         if (pass.equals(password)) {
-            
+
             try {
                 id = tf_general_id.getText();
                 nombre = tf_general_nombre.getText();
@@ -1347,35 +1347,35 @@ public class Sistema extends javax.swing.JFrame {
                 altura = Integer.parseInt(tf_general_altura.getText());
                 peso = Integer.parseInt(tf_general_peso.getText());
                 sueldo = Integer.parseInt(tf_general_sueldo.getText());
-                
+
                 Persona_General x = new Persona_General(ocupacion, horario, trabajando, sueldo, id, nombre, edad, sexo, estadoc, altura, peso);
-                
+
                 lista.add(x);
-                
+
                 DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_contactos.getModel();
                 dc.addElement(x);
                 cb_contactos.setModel(dc);
-                
+
                 DefaultComboBoxModel dc2 = (DefaultComboBoxModel) cb_persona.getModel();
                 dc2.addElement(x);
                 cb_persona.setModel(dc2);
-                
+
                 DefaultComboBoxModel dc3 = (DefaultComboBoxModel) cb_persona1.getModel();
                 dc3.addElement(x);
                 cb_persona1.setModel(dc3);
-                
+
                 DefaultComboBoxModel dc4 = (DefaultComboBoxModel) cb_persona2.getModel();
                 dc4.addElement(x);
                 cb_persona2.setModel(dc4);
-                
+
                 DefaultComboBoxModel dc5 = (DefaultComboBoxModel) cb_emisor.getModel();
                 dc5.addElement(x);
                 cb_emisor.setModel(dc5);
-                
+
                 DefaultComboBoxModel dc6 = (DefaultComboBoxModel) cb_receptor.getModel();
                 dc6.addElement(x);
                 cb_receptor.setModel(dc6);
-                
+
                 tf_general_id.setText("");
                 tf_general_nombre.setText("");
                 tf_general_edad.setText("");
@@ -1387,22 +1387,22 @@ public class Sistema extends javax.swing.JFrame {
                 tf_general_altura.setText("");
                 tf_general_peso.setText("");
                 tf_general_sueldo.setText("");
-                
+
                 Menu_crear.setEnabledAt(2, true);
                 Menu_crear.setEnabledAt(3, true);
                 Menu_crear.setEnabledAt(4, true);
-                
+
                 JOptionPane.showMessageDialog(this, "Agregado con exito");
-                
+
             } catch (Exception e) {
                 JOptionPane.showConfirmDialog(this, "Ocurrio un error y no se guardaron los datos");
-                
+
             }
         } else {
             JOptionPane.showMessageDialog(this, "La contraseña esta incorrecta");
-            
+
         }
-        
+
 
     }//GEN-LAST:event_bt_generalMouseClicked
 
@@ -1413,7 +1413,7 @@ public class Sistema extends javax.swing.JFrame {
         double talla;
         String pass = JOptionPane.showInputDialog(this, "Ingrese la contraseña del sistema");
         if (pass.equals(password)) {
-            
+
             try {
                 color = tf_ropa_color.getText();
                 descripcion = tf_ropa_descrip.getText();
@@ -1423,11 +1423,11 @@ public class Sistema extends javax.swing.JFrame {
                 tipo = tf_ropa_tipo.getText();
                 pais = tf_ropa_pais.getText();
                 talla = Integer.parseInt(tf_ropa_talla.getText());
-                
+
                 Ropa x = new Ropa(talla, tipo, pais, color, descripcion, marca, size, calidad, (Persona) cb_persona.getModel().getSelectedItem());
-                
+
                 lista2.add(x);
-                
+
                 tf_ropa_color.setText("");
                 tf_ropa_descrip.setText("");
                 tf_ropa_marca.setText("");
@@ -1436,16 +1436,16 @@ public class Sistema extends javax.swing.JFrame {
                 tf_ropa_tipo.setText("");
                 tf_ropa_pais.setText("");
                 tf_ropa_talla.setText("");
-                
+
                 JOptionPane.showMessageDialog(this, "Agregado con exito");
-                
+
             } catch (Exception e) {
                 JOptionPane.showConfirmDialog(this, "Ocurrio un error y no se guardaron los datos");
-                
+
             }
         } else {
             JOptionPane.showMessageDialog(this, "La contraseña esta incorrecta");
-            
+
         }
     }//GEN-LAST:event_bt_ropaMouseClicked
 
@@ -1455,9 +1455,9 @@ public class Sistema extends javax.swing.JFrame {
         String suela;
         double talla;
         int comodidad;
-        
+
         String pass = JOptionPane.showInputDialog(this, "Ingrese la contraseña del sistema");
-        
+
         if (pass.equals(password)) {
             try {
                 color = tf_zapato_color.getText();
@@ -1468,11 +1468,11 @@ public class Sistema extends javax.swing.JFrame {
                 suela = tf_zapato_suela.getText();
                 comodidad = Integer.parseInt(tf_zapato_como.getText());
                 talla = Integer.parseInt(tf_zapato_talla.getText());
-                
+
                 Zapatos x = new Zapatos(talla, suela, comodidad, color, descripcion, marca, size, calidad, (Persona) cb_persona1.getModel().getSelectedItem());
-                
+
                 lista2.add(x);
-                
+
                 tf_ropa_color.setText("");
                 tf_ropa_descrip.setText("");
                 tf_ropa_marca.setText("");
@@ -1481,18 +1481,18 @@ public class Sistema extends javax.swing.JFrame {
                 tf_ropa_tipo.setText("");
                 tf_ropa_pais.setText("");
                 tf_ropa_talla.setText("");
-                
+
                 JOptionPane.showMessageDialog(this, "Agregado con exito");
-                
+
             } catch (Exception e) {
                 JOptionPane.showConfirmDialog(this, "Ocurrio un error y no se guardaron los datos");
-                
+
             }
         } else {
             JOptionPane.showMessageDialog(this, "La contraseña esta incorrecta");
-            
+
         }
-        
+
 
     }//GEN-LAST:event_bt_zapatoMouseClicked
 
@@ -1500,9 +1500,9 @@ public class Sistema extends javax.swing.JFrame {
         // TODO add your handling code here:
         String color, descripcion, marca, size, calidad;
         String garantia, funcionamiento, lugar;
-        
+
         String pass = JOptionPane.showInputDialog(this, "Ingrese la contraseña del sistema");
-        
+
         if (pass.equals(password)) {
             try {
                 color = tf_hogar_color.getText();
@@ -1513,11 +1513,11 @@ public class Sistema extends javax.swing.JFrame {
                 funcionamiento = tf_hogar_funcion.getText();
                 garantia = tf_hogar_garan.getText();
                 lugar = tf_hogar_lugar.getText();
-                
+
                 ObjetosHogar x = new ObjetosHogar(lugar, funcionamiento, garantia, color, descripcion, marca, size, calidad, (Persona) cb_persona2.getModel().getSelectedItem());
-                
+
                 lista2.add(x);
-                
+
                 tf_ropa_color.setText("");
                 tf_ropa_descrip.setText("");
                 tf_ropa_marca.setText("");
@@ -1526,45 +1526,45 @@ public class Sistema extends javax.swing.JFrame {
                 tf_ropa_tipo.setText("");
                 tf_ropa_pais.setText("");
                 tf_ropa_talla.setText("");
-                
+
                 JOptionPane.showMessageDialog(this, "Agregado con exito");
-                
+
             } catch (Exception e) {
                 JOptionPane.showConfirmDialog(this, "Ocurrio un error y no se guardaron los datos");
-                
+
             }
         } else {
             JOptionPane.showMessageDialog(this, "La contraseña esta incorrecta");
-            
+
         }
     }//GEN-LAST:event_bt_hogarMouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
         String mensaje;
-        
+
         String pass = JOptionPane.showInputDialog(this, "Ingrese la contraseña del sistema");
-        
+
         if (pass.equals(password)) {
-            
+
             try {
                 mensaje = ta_mensaje.getText();
                 Mensajes x = new Mensajes((Persona) cb_receptor.getModel().getSelectedItem(), (Persona) cb_emisor.getModel().getSelectedItem(), mensaje);
-                
+
                 DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_mensaje.getModel();
                 dc.addElement(x);
                 cb_mensaje.setModel(dc);
-                
+
                 JOptionPane.showMessageDialog(this, "Se mando el mensaje con exito");
-                
+
             } catch (Exception e) {
                 JOptionPane.showConfirmDialog(this, "Ocurrio un error y no se guardaron los datos");
-                
+
             }
-            
+
         } else {
             JOptionPane.showMessageDialog(this, "La contraseña esta incorrecta");
-            
+
         }
     }//GEN-LAST:event_jButton1MouseClicked
 
@@ -1577,7 +1577,7 @@ public class Sistema extends javax.swing.JFrame {
             DefaultTableModel modelo = (DefaultTableModel) tabla_mensaje.getModel();
             modelo.addRow(newrow);
             tabla_mensaje.setModel(modelo);
-            
+
         }
     }//GEN-LAST:event_cb_mensajeItemStateChanged
 
@@ -1595,7 +1595,7 @@ public class Sistema extends javax.swing.JFrame {
             DefaultTableModel modelo = (DefaultTableModel) tabla_contacto.getModel();
             modelo.addRow(newrow);
             tabla_contacto.setModel(modelo);
-            
+
         }
     }//GEN-LAST:event_cb_contactosItemStateChanged
 
@@ -1611,41 +1611,195 @@ public class Sistema extends javax.swing.JFrame {
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         // TODO add your handling code here:
         String s = "";
-        for (Persona persona : lista) {
-            s += lista.indexOf(persona) + " ";
-            s += persona;
-            s += "\n";
-        }
-        int eliminar = Integer.parseInt(JOptionPane.showInputDialog(this, s + "\nIngrese la posicion:"));
-        if (eliminar < lista.size() || eliminar > lista.size()) {
-            JOptionPane.showMessageDialog(this, "Usted ingreso equivocado las poicion!");
-        }else{
-            lista.remove(eliminar);
+        String pass = JOptionPane.showInputDialog(this, "Ingrese la contraseña del sistema");
+
+        if (pass.equals(password)) {
+
+            for (Persona persona : lista) {
+                s += lista.indexOf(persona) + " ";
+                s += persona;
+                s += "\n";
+            }
+            int eliminar = Integer.parseInt(JOptionPane.showInputDialog(this, s + "\nIngrese la posicion:"));
+            if (eliminar < lista.size() || eliminar > lista.size()) {
+                JOptionPane.showMessageDialog(this, "Usted ingreso equivocado las poicion!");
+            } else {
+                lista.remove(eliminar);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "La contraseña esta incorrecta");
+
         }
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
         // TODO add your handling code here:
         String s = "";
-        for (Objetos persona : lista2) {
-            s += "Posicion "+lista.indexOf(persona) + " ";
-            s += persona;
-            s += "\n";
-        }
-        int eliminar = Integer.parseInt(JOptionPane.showInputDialog(this, s + "\nIngrese la posicion:"));
-        if (eliminar < lista2.size() || eliminar > lista2.size()) {
-            JOptionPane.showMessageDialog(this, "Usted ingreso equivocado las poicion!");
-        }else{
-            lista2.remove(eliminar);
+        String pass = JOptionPane.showInputDialog(this, "Ingrese la contraseña del sistema");
+        if (pass.equals(password)) {
+
+            for (Objetos persona : lista2) {
+                s += "Posicion " + lista.indexOf(persona) + " ";
+                s += persona;
+                s += "\n";
+            }
+            int eliminar = Integer.parseInt(JOptionPane.showInputDialog(this, s + "\nIngrese la posicion:"));
+            if (eliminar < lista2.size() || eliminar > lista2.size()) {
+                JOptionPane.showMessageDialog(this, "Usted ingreso equivocado las poicion!");
+            } else {
+                lista2.remove(eliminar);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "La contraseña esta incorrecta");
+
         }
     }//GEN-LAST:event_jButton4MouseClicked
 
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
         // TODO add your handling code here:
+        String s = "";
+        String pass2 = JOptionPane.showInputDialog(this, "Ingrese la contraseña del sistema");
+        if (pass2.equals(password)) {
+
+            for (Persona persona : lista) {
+                s += lista.indexOf(persona) + " ";
+                s += persona;
+                s += "\n";
+            }
+            int modi = Integer.parseInt(JOptionPane.showInputDialog(this, s + "\nIngrese la posicion:"));
+            if (modi < lista.size() || modi > lista.size()) {
+                JOptionPane.showMessageDialog(this, "Usted ingreso equivocado las poicion!");
+            } else {
+                if (lista.get(modi) instanceof Gerente) {
+                    String id, nombre, edad, sexo, estadoc, user, pass, cargo;
+                    double altura, peso;
+
+                    id = JOptionPane.showInputDialog(this, "Ingrese el nuevo id");
+                    nombre = JOptionPane.showInputDialog(this, "Ingrese el nuevo nombre");
+                    edad = JOptionPane.showInputDialog(this, "Ingrese la nueva edad");
+                    sexo = JOptionPane.showInputDialog(this, "Ingrese el nuevo sexo");
+                    estadoc = JOptionPane.showInputDialog(this, "Ingrese el nuevo estado civil");
+                    user = JOptionPane.showInputDialog(this, "Ingrese el nuevo usario");
+                    pass = JOptionPane.showInputDialog(this, "Ingrese la nueva contraseña");
+                    cargo = JOptionPane.showInputDialog(this, "Ingrese el nuevo cargo");
+                    altura = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese la nueva altura"));
+                    peso = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese el nuevo peso"));
+
+                    Gerente x = new Gerente(user, pass, cargo, id, nombre, edad, sexo, estadoc, altura, peso);
+
+                    lista.set(modi, x);
+                    JOptionPane.showMessageDialog(this, "Se modifico con exito!");
+
+                } else if (lista.get(modi) instanceof Persona_General) {
+                    String id, nombre, edad, sexo, estadoc, horario, ocupacion, trabajando;
+                    double altura, peso, sueldo;
+
+                    id = JOptionPane.showInputDialog(this, "Ingrese el nuevo id");
+                    nombre = JOptionPane.showInputDialog(this, "Ingrese el nuevo nombre");
+                    edad = JOptionPane.showInputDialog(this, "Ingrese la nueva edad");
+                    sexo = JOptionPane.showInputDialog(this, "Ingrese el nuevo sexo");
+                    estadoc = JOptionPane.showInputDialog(this, "Ingrese el nuevo estado civil");
+                    horario = JOptionPane.showInputDialog(this, "Ingrese el nuevo horario de trabajo");
+                    ocupacion = JOptionPane.showInputDialog(this, "Ingrese la nueva ocupacion");
+                    trabajando = JOptionPane.showInputDialog(this, "Ingrese el nuevo tiempo");
+                    altura = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese la nueva altura"));
+                    peso = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese el nuevo peso"));
+                    sueldo = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese el nuevo sueldo"));
+
+                    Persona_General x = new Persona_General(ocupacion, horario, trabajando, sueldo, id, nombre, edad, sexo, estadoc, altura, peso);
+
+                    lista.set(modi, x);
+                    JOptionPane.showMessageDialog(this, "Se modifico con exito!");
+                }
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "La contraseña esta incorrecta");
+
+        }
     }//GEN-LAST:event_jButton5MouseClicked
 
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
         // TODO add your handling code here:
+        String s = "";
+        String pass2 = JOptionPane.showInputDialog(this, "Ingrese la contraseña del sistema");
+        if (pass2.equals(password)) {
+
+            for (Objetos persona : lista2) {
+                s += "Posicion " + lista.indexOf(persona) + " ";
+                s += persona;
+                s += "\n";
+            }
+            int modi = Integer.parseInt(JOptionPane.showInputDialog(this, s + "\nIngrese la posicion"));
+            if (modi < lista2.size() || modi > lista2.size()) {
+                JOptionPane.showMessageDialog(this, "Usted ingreso equivocado las poicion!");
+            } else {
+                if (lista2.get(modi) instanceof Ropa) {
+                    String color, descripcion, marca, size, calidad;
+                    String tipo, pais;
+                    double talla;
+
+                    color = JOptionPane.showInputDialog(this, "Ingrese el nuevo color: ");
+                    descripcion = JOptionPane.showInputDialog(this, "Ingrese la nueva descripcion: ");
+                    marca = JOptionPane.showInputDialog(this, "Ingrese la nueva marca: ");
+                    size = JOptionPane.showInputDialog(this, "Ingrese el nuevo tamaño: ");
+                    calidad = JOptionPane.showInputDialog(this, "Ingrese la nueva calidad: ");
+                    tipo = JOptionPane.showInputDialog(this, "Ingrese el nuevo tipo de tela: ");
+                    pais = JOptionPane.showInputDialog(this, "Ingrese el nuevo pais donde fue elaborado: ");
+                    talla = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese la nueva talla: "));
+
+                    Ropa x = new Ropa(talla, tipo, pais, color, descripcion, marca, size, calidad, new Persona());
+
+                    lista2.set(modi, x);
+
+                    JOptionPane.showMessageDialog(this, "Se modifico con exito!");
+
+                } else if (lista2.get(modi) instanceof Zapatos) {
+                    String color, descripcion, marca, size, calidad;
+                    String suela;
+                    double talla;
+                    int comodidad;
+
+                    color = JOptionPane.showInputDialog(this, "Ingrese el nuevo color: ");
+                    descripcion = JOptionPane.showInputDialog(this, "Ingrese la nueva descripcion: ");
+                    marca = JOptionPane.showInputDialog(this, "Ingrese la nueva marca: ");
+                    size = JOptionPane.showInputDialog(this, "Ingrese el nuevo tamaño: ");
+                    calidad = JOptionPane.showInputDialog(this, "Ingrese la nueva calidad: ");
+                    suela = JOptionPane.showInputDialog(this, "Ingrese la nueva descripcion de la suela: ");
+                    talla = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese la nueva talla: "));
+                    comodidad = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese la nueva comodidad: "));
+
+                    Zapatos x = new Zapatos(talla, suela, comodidad, color, descripcion, marca, size, calidad, new Persona());
+
+                    lista2.set(modi, x);
+
+                    JOptionPane.showMessageDialog(this, "Se modifico con exito!");
+
+                } else if (lista2.get(modi) instanceof ObjetosHogar) {
+                    String color, descripcion, marca, size, calidad;
+                    String garantia, funcionamiento, lugar;
+
+                    color = JOptionPane.showInputDialog(this, "Ingrese el nuevo color: ");
+                    descripcion = JOptionPane.showInputDialog(this, "Ingrese la nueva descripcion: ");
+                    marca = JOptionPane.showInputDialog(this, "Ingrese la nueva marca: ");
+                    size = JOptionPane.showInputDialog(this, "Ingrese el nuevo tamaño: ");
+                    calidad = JOptionPane.showInputDialog(this, "Ingrese la nueva calidad: ");
+                    garantia = JOptionPane.showInputDialog(this, "Ingrese el nuevo tiempo de la garantia: ");
+                    funcionamiento = JOptionPane.showInputDialog(this, "Ingrese las nuevas instrucciones del funcionamiento: ");
+                    lugar = JOptionPane.showInputDialog(this, "Ingrese la nueva descripcion del producto:  ");
+                    
+                    ObjetosHogar x = new ObjetosHogar(lugar, funcionamiento, garantia, color, descripcion, marca, size, calidad, new Persona());
+
+                    lista2.set(modi, x);
+
+                    JOptionPane.showMessageDialog(this, "Se modifico con exito!");
+
+                }
+
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "La contraseña esta incorrecta");
+
+        }
     }//GEN-LAST:event_jButton6MouseClicked
 
     /**
